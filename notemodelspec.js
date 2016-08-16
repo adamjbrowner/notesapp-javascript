@@ -8,8 +8,8 @@ function createsANote() {
 
 function createNotesList() {
   var list = new noteList()
-  list.addNote("Please bring back ruby");
-  assert.isTrue(list.readNotes()[0] === "Please bring back ruby");
+  list.addNote("I love ruby");
+  assert.isTrue(list.readNotes()[0].readNote() === "I love ruby");
 }
 createsANote();
 createNotesList();
