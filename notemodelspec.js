@@ -6,5 +6,10 @@ function createsANote() {
   assert.isTrue(note.readNote() === "My favourite language is Ruby");
 }
 
-
+function createNotesList() {
+  var list = new noteList()
+  list.addNote("Please bring back ruby");
+  assert.isTrue(list.readNotes()[0] === "Please bring back ruby");
+}
 createsANote();
+createNotesList();
