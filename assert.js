@@ -4,7 +4,7 @@
     if (!assertionToCheck) {
       throw new Error("Assertion failed:" + assertionToCheck + " is NOT truthy");
     } else {
-      console.log("tests passed");
+      console.log("tests pass");
     }
   }
 
