@@ -10,11 +10,12 @@
     this._list.readNotes().forEach(function(note) {
       var noteText = note.readNote();
       var shortened = noteText.substring(0,20);
-      HTMLstring += "<li><div>" + shortened + "</div></li>";
-
+      HTMLstring += "<li><div>" +"<a href='#" +  note.id() + "'>" + shortened +  "</a>" + "</div></li>";
     });
+
      return HTMLstring += "</ul>";
+  }
   };
-  };
+
   exports.noteListView = noteListView;
-})(this)
+})(this);

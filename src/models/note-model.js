@@ -10,6 +10,9 @@
       this.id = function() { return newId; };
       return newId;
   };
+  Note.prototype.resetIDs = function(){
+      id = 0;
+  };
 
   Note.prototype.readNote = function() {
     return this.body;
