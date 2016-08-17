@@ -34,8 +34,25 @@ function viewWithOneNote() {
   assert.isTrue("list with one note", view.toHTML() === "<ul><li><div>It's a wednesday</div></li></ul>");
 }
 
+function noteControllerwithList() {
+  var list = new noteList();
+  var controller = new noteController(list);
+  assert.isTrue("Controller contains a list", controller._list === list)
+}
+
+function noteControllerHTML() {
+  var list = new noteList();
+  var controller = new noteController(list);
+  controller._list.addNote("My favourite drink: seltzer");
+  controller.setUpNoteListView();
+  controller.HTMLToApp();
+  assert.isTrue("Controller outputs to app", document.getElementById('app').innerHTML === "<ul><li><div>My favourite drink: seltzer</div></li></ul>");
+}
+
 createsANote();
 createNotesList();
 showNotesListinHTML();
 viewWithListWithNoNotes();
 viewWithOneNote();
+noteControllerwithList();
+noteControllerHTML();
